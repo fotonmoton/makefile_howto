@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/11/28 16:19:32 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/11/28 16:39:45 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+void	ft_bzero(void *s, size_t n)
 {
-	ft_putstr("Hello, World!\n");
+	ft_memset(s, 0, n);
 }

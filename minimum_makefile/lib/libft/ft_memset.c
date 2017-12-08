@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/11/28 12:06:20 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/11/28 16:47:35 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	ft_putstr("Hello, World!\n");
+	unsigned char *s;
+
+	s = (unsigned char *)b;
+	while (len--)
+		*s++ = (unsigned char)c;
+	return (b);
 }

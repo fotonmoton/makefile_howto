@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_strrchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/11/30 18:32:21 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/12/02 16:19:20 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+char	*ft_strrchr(const char *s, int c)
 {
-	ft_putstr("Hello, World!\n");
+	const char *str;
+
+	str = s;
+	while (*s)
+		s++;
+	while (s != str && *s != (char)c)
+		s--;
+	if (*s == (char)c)
+		return ((char *)s);
+	return (NULL);
 }

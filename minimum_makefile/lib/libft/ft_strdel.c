@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/12/01 17:15:34 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/12/01 17:17:50 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+void	ft_strdel(char **as)
 {
-	ft_putstr("Hello, World!\n");
+	ft_memdel((void **)as);
 }

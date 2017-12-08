@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/11/30 15:03:18 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/11/30 15:11:23 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	ft_putstr("Hello, World!\n");
+	char	*s;
+	size_t	s1_size;
+
+	s = s1;
+	s1_size = sizeof(s1);
+	while (*s1)
+		s1++;
+	while (*s2 && s1_size - 1 && n--)
+		*s1++ = *s2++;
+	*s1 = '\0';
+	return (s);
 }

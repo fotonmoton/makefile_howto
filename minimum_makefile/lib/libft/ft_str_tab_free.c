@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_str_tab_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2017/11/05 19:15:08 by gtertysh          #+#    #+#             */
+/*   Updated: 2017/11/05 19:17:26 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdlib.h>
 
-void	hello(void)
+void	ft_str_tab_free(char **tab)
 {
-	ft_putstr("Hello, World!\n");
+	char	**tmp;
+
+	tmp = tab;
+	while (*tmp)
+		free(*tmp++);
+	free(tab);
 }

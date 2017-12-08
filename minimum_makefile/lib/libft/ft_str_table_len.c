@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_str_table_len.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2017/11/05 17:25:40 by gtertysh          #+#    #+#             */
+/*   Updated: 2017/11/05 17:25:42 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
-void	hello(void)
+int		ft_str_table_len(char **tab)
 {
-	ft_putstr("Hello, World!\n");
+	int		len;
+
+	len = 0;
+	if (tab)
+		while (*tab)
+		{
+			tab++;
+			len++;
+		}
+	return (len);
 }

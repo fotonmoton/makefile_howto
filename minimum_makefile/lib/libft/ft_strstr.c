@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/11/30 19:32:43 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/12/06 14:23:54 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+char	*ft_strstr(const char *big, const char *little)
 {
-	ft_putstr("Hello, World!\n");
+	size_t	l;
+
+	l = ft_strlen(little);
+	if (!*little)
+		return ((char *)big);
+	while (*big)
+	{
+		if (!(ft_memcmp(big, little, l)))
+			return ((char *)big);
+		big++;
+	}
+	return (NULL);
 }

@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/12/06 17:45:28 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/12/06 20:06:23 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+void		ft_lstadd_back(t_list **l, void *content, size_t size)
 {
-	ft_putstr("Hello, World!\n");
+	if (!l)
+		return ;
+	if (*l == NULL)
+		(*l) = ft_lstnew(content, size);
+	else
+	{
+		while ((*l)->next)
+			l = &(*l)->next;
+		(*l)->next = ft_lstnew(content, size);
+	}
 }

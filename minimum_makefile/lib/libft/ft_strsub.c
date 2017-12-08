@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/12/01 19:02:56 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/12/02 16:21:00 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	ft_putstr("Hello, World!\n");
+	char	*ret;
+	char	*tmp;
+
+	ret = NULL;
+	if (s)
+		if ((ret = ft_strnew(len)) &&
+			(tmp = ret))
+			while (len--)
+				*tmp++ = *(s++ + start);
+	return (ret);
 }

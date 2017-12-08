@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/11/30 15:16:55 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/11/30 18:13:07 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	ft_putstr("Hello, World!\n");
+	size_t	dst_size;
+	size_t	src_size;
+
+	dst_size = ft_strlen(dst);
+	src_size = ft_strlen(src);
+	while (*dst)
+		dst++;
+	if (size > dst_size)
+	{
+		while (*src && (size-- - dst_size - 1))
+			*dst++ = *src++;
+		*dst = '\0';
+		return (src_size + dst_size);
+	}
+	return (src_size + size);
 }

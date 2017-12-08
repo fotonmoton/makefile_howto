@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/11/29 14:55:05 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/12/01 16:38:06 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	ft_putstr("Hello, World!\n");
+	unsigned char *tmp;
+
+	tmp = dst;
+	if (src < dst)
+	{
+		src += len;
+		dst += len;
+		while (len--)
+			*((char *)--dst) = *((const char *)--src);
+	}
+	else
+	{
+		while (len--)
+			*(char *)dst++ = *(const char *)src++;
+	}
+	return (tmp);
 }

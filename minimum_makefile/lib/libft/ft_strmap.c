@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtertysh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/03 21:35:31 by gtertysh          #+#    #+#             */
-/*   Updated: 2017/12/08 19:31:45 by gtertysh         ###   ########.fr       */
+/*   Created: 2016/12/01 17:39:51 by gtertysh          #+#    #+#             */
+/*   Updated: 2016/12/06 19:53:31 by gtertysh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	hello(void)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	ft_putstr("Hello, World!\n");
+	char	*ret;
+	size_t	i;
+
+	i = 0;
+	ret = NULL;
+	if (s)
+		if ((ret = (char *)ft_strnew(ft_strlen(s))))
+			while (*(s + i))
+			{
+				*(ret + i) = f(*(s + i));
+				i++;
+			}
+	return (ret);
 }
